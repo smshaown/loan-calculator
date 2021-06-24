@@ -66,8 +66,16 @@ function showError(error){
   // Create textNode and append to div 
   errorDiv.appendChild(document.createTextNode(error));
 
+ const card = document.querySelector('.card');
+ const heading = document.querySelector('.heading');
 
-///
+ card.insertBefore(errorDiv, heading);
 
+ // Clear Error after 3 seconds
+ setTimeout(clearError, 3000)
 
+}
+// Clear Error
+function clearError(){
+    document.querySelector('.alert').remove();
 }
